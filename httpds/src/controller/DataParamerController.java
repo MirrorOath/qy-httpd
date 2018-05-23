@@ -139,6 +139,7 @@ public class DataParamerController extends BaseController {
                 }
                 br.close();
                 datas = sb.toString();
+                System.out.println(datas);
             }
             if (datas.length() == 16 || datas.length() == 15) {
                 String sql = "select * from dict_mobauthorinfo where MobID=" + Q(datas);
