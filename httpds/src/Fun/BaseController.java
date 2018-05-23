@@ -8,60 +8,59 @@ import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Db;
 
 public class BaseController extends Controller {
-	public String _SQL = "";
+    public String _SQL = "";
 
-	public String Q(String s) {
-		return "'" + s + "'";
-	}	
+    public String Q(String s) {
+        return "'" + s + "'";
+    }
 
-	public  Date StrToDate(String sdate) {
-		if (isN(sdate)) {
-			return null;
-		} else {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			try {
-				Date t = sdf.parse(sdate);
-				return t;
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				return null;
-			}
-		}
-	}
+    public Date StrToDate(String sdate) {
+        if (isN(sdate)) {
+            return null;
+        } else {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            try {
+                Date t = sdf.parse(sdate);
+                return t;
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                return null;
+            }
+        }
+    }
 
-	public Date StrToDateTime(String sdate) {
-		if (isN(sdate)) {
-			return null;
-		} else {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			try {
-				Date t = sdf.parse(sdate);
-				return t;
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				return null;
-			}
-		}
-	}
+    public Date StrToDateTime(String sdate) {
+        if (isN(sdate)) {
+            return null;
+        } else {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            try {
+                Date t = sdf.parse(sdate);
+                return t;
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                return null;
+            }
+        }
+    }
 
-	public String P(String p) {
-		String s = this.getPara(p);
-		if (s == null)
-			return "";
-		else
-			return s;
+    public String P(String p) {
+        String s = this.getPara(p);
+        if (s == null)
+            return "";
+        else
+            return s;
 
-	}
+    }
 
+    public Boolean isN(String value) {
+        if (value != null)
+            if (!value.trim().equals(""))
+                return false;
+            else
+                return true;
+        else
+            return true;
+    }
 
-	public Boolean isN(String value) {
-		if (value != null)
-			if (!value.trim().equals(""))
-				return false;
-			else
-				return true;
-		else
-			return true;
-	}
-	
 }
