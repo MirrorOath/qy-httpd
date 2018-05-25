@@ -114,6 +114,14 @@ public class DataParamerController extends BaseController {
             jo.put("message", e.getMessage());
         }
         // this.setAttr("datas", jo.toString());
+        {
+            this.getResponse().setHeader("Cache-Control", "");
+            this.getResponse().setHeader("Content-Type", "");
+            this.getResponse().setHeader("Date", "");
+            this.getResponse().setHeader("Expires", "");
+            this.getResponse().setHeader("Pragma", "");
+            this.getResponse().setHeader("Server", "");
+        }
         this.renderJson(jo);
     }
 
@@ -171,7 +179,6 @@ public class DataParamerController extends BaseController {
         // this.setAttr("datas", jo.toString());
         // this.setAttr("listdatas", lists);
         this.renderText(lists);
-
     }
 
     /**
@@ -215,6 +222,14 @@ public class DataParamerController extends BaseController {
         }
 
         // this.setAttr("listdatas", lists);
+        {
+            this.getResponse().setHeader("Cache-Control", "");
+            this.getResponse().setHeader("Content-Type", "");
+            this.getResponse().setHeader("Date", "");
+            this.getResponse().setHeader("Expires", "");
+            this.getResponse().setHeader("Pragma", "");
+            this.getResponse().setHeader("Server", "");
+        }
         this.renderText(lists);
     }
 
@@ -293,6 +308,14 @@ public class DataParamerController extends BaseController {
             jo.put("message", e.getMessage());
         }
         this.setAttr("datas", jo.toString());
+        {
+            this.getResponse().setHeader("Cache-Control", "");
+            this.getResponse().setHeader("Content-Type", "");
+            this.getResponse().setHeader("Date", "");
+            this.getResponse().setHeader("Expires", "");
+            this.getResponse().setHeader("Pragma", "");
+            this.getResponse().setHeader("Server", "");
+        }
         this.renderJson(jo);
     }
 
